@@ -29,7 +29,7 @@
         <div class="recebe"></div>
      <form class="login" action="" method="post">
          <div id="geral">
-             <p>Estacionamento de veiculos</p>
+             <p>Parking Maneger</p>
              <span>Nome</span>
                 <input id="nome" type="text" name="nome"/><br>
              <span>Senha</span>
