@@ -1,0 +1,66 @@
+*{
+  margin:0%;
+  padding: 0%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    //border:1px solid black;
+    //background:indianred;
+    background: url(../img/fundo.jpg); // no-repeat center top fixed;
+    background-size:cover;
+}
+#geral{
+    width: 33%;
+    height: 45%;
+    border-radius:10px;
+    //border:1px solid black;
+    margin:13% 0% 0% 35%;    
+    background:lightcoral;
+}
+#geral p{
+    text-align: center;
+    font-size: 2em;
+    font-family: cursive,arial;
+    color:white;
+}
+#geral span{
+    margin-left:7%;
+    color:white;
+    font-size: 1.3em;
+    font-family: arial,cursive;
+}
+#geral #nome{
+    margin-top:4%;
+    margin-left: 7%;
+    width: 40%;
+}
+#geral #senha{
+    margin-top:4%;
+    margin-left: 7%;
+     width: 40%;
+}
+
+#geral #limpa{
+    float:left;
+    margin-left:30%;
+    margin-top: 10%;
+    width: 20%;
+    height: 15%;
+    background:white;
+    color:black;
+    border-radius: 7px;
+    font-size: 1.2em;
+    
+}
+#geral #login{
+    float:left;
+    margin-left:70%;
+    margin-top: 10%;
+    width: 20%;
+    height: 15%;
+    background:white;
+    color:black;
+    border-radius: 7px;
+    font-size: 1.2em;
+}
