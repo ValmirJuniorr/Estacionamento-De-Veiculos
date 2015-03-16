@@ -1,3 +1,5 @@
+CREATE DATABASE ParkManeger;
+
 CREATE TABLE Horario (
  idHorario CHAR(10) NOT NULL,
  data DATE,
