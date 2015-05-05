@@ -9,7 +9,7 @@
 			<li><a href="?pg=inicio">Início</a></li>
 			<li><a href="?area=lista_atendentes">Atendentes</a></li>
 			<li><a href="?area=lista_clientes">Clientes</a></li>
-			<li><a href="#">Vagas</a></li>
+			<li><a href="?area=lista_vagas">Vagas</a></li>
 			<li><a href="#">Relatórios</a></li>
 			<li><a href="control/Usuario/logout.php">Sair</a></li>
 		</ul>
@@ -41,6 +41,12 @@
 					break;
                                 case "editar_cliente":
 					include("view/admin/editar_cliente.php");
+					break;
+                                case "cadastro_cliente":
+					include("view/admin/cadastro_cliente.php");
+					break;
+                                case "lista_vagas":
+					include("view/admin/lista_vagas.php");
 					break;
 				default: 
 					echo "Página não encontrada";				

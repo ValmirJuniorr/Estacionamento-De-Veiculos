@@ -1,5 +1,5 @@
-<h2 class="titulo">Clientes</h2>
-<a href="?area=cadastro_cliente" class="btn-cadastrar">CADASTRAR NOVO</a>
+<h2 class="titulo">Vagas</h2>
+<a href="?area=cadastro_atendente" class="btn-cadastrar">CADASTRAR NOVO</a>
 <section class="tabela">
 <?php	
     include_once("control/Usuario/conferirLogin.php");	
@@ -9,9 +9,8 @@
     if(isset($_POST['busca'])){
         $busca = $_POST['busca'];
     }else{$busca='';}
-    $sql = "SELECT cliente.idCliente, usuario.nomeUsuario FROM cliente
-  INNER JOIN usuario ON usuario.idUsuario = cliente.idUsuario WHERE usuario.nomeUsuario LIKE '%$busca%'
-  ORDER BY usuario.nomeUsuario ASC";
+    $sql = "SELECT * FROM vaga WHERE valor LIKE '%$busca%' OR localizacaoHorizontal LIKE '%$busca%' OR localizacaoVertical LIKE '%$busca%'
+  ORDER BY idVaga ASC";
     $conect = new Banco();
     $conect->abrir();
     $res = mysql_query($sql);
@@ -22,7 +21,9 @@
     <table width=100% cellpading=0 cellspacing=0>
         <tr>
             <th>ID</th>
-            <th>Nome</th>            
+            <th>Valor</th>            
+            <th>H x V</th>            
+            <th>Status</th>            
             <th class="fright">Ações</th>					
         </tr>
     <?php
@@ -39,9 +40,11 @@
             }    
             
             echo "<tr bgcolor='".$cor."'>";
-            echo '<td>'.$row['idCliente']."</td>";                         
-            echo '<td>'.$row['nomeUsuario']."</td>";				
-            echo '<td class="fright"><a href="?area=editar_cliente&idCliente='.$row['idCliente'].'" class="editar">Editar</a>  <a href="control/admin/exclir_cliente.php?idCliente='.$row['idCliente'].'" class="excluir">Excluir</a></td>';
+            echo '<td>'.$row['idVaga']."</td>";                         
+            echo '<td>R$ '.$row['valor']."</td>";				
+            echo '<td>'.$row['localizacaoHorizontal']." x ".$row['localizacaoVertical']."</td>";				            
+            echo '<td>'.$row['status']."</td>";				
+            echo '<td class="fright"><a href="?area=editar_cliente&idCliente='.$row['idVaga'].'" class="editar">Editar</a>  <a href="control/admin/exclir_cliente.php?idCliente='.$row['idVaga'].'" class="excluir">Excluir</a></td>';
             echo "</tr>";
             $cont = $cont + 1;
       }
