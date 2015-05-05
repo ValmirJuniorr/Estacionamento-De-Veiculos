@@ -11,13 +11,17 @@
 	<link rel="stylesheet" href="style/animate.css">
 </head>
 <body>	
+    
 	<?php
+                //Inclui a classe de conexão com banco
 		include_once('control/connection/connection.class.php');
+                //se a variavel página(pg) não existir inclui inicio
 		if(empty($_GET['pg'])){				   
 			include ("view/inicio.php");  
 		}		
 		else{
 			$pg = $_GET['pg'];
+                        //qual pagina sera inclusa no codigo
 			switch($pg){
 				case "login":
 					include("view/login/login.php");

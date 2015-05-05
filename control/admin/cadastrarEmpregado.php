@@ -20,11 +20,11 @@ $conferir_login = mysql_num_rows($conferir_sql);
 if($conferir_login<1 || $login == ""){
     $cadastro = mysql_query("INSERT INTO empregado (login, senha, tipo) VALUES('$login', '$senha', '2')") or die(mysql_error());
     if($cadastro == true){
-        header('Location: ../../?area=msg&tipo=2');        
+        header('Location: ?area=msg&tipo=2');        
     }
-    else header('Location: ../../?area=msg&tipo=1');
+    else header('Location: ?area=msg&tipo=1');
 }
-else header('Location: ../../?area=msg&tipo=1');
+else header('Location: ?area=msg&tipo=1');
 $bd->fechar();
-
+ 
 ?>

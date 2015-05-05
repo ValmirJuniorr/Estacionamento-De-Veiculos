@@ -21,8 +21,8 @@ public function __construct(){
 public function abrir(){
         $this->db = mysql_connect($this->local,$this->user,$this->senha) or die($this->msg0);
         mysql_select_db($this->nome_db,$this->db) or die($this->msg1);
-		// Definindo o charset como utf8 para evitar problemas com acentuação
-		$charset = mysql_set_charset('utf8');
+	// Definindo o charset como utf8 para evitar problemas com acentuação
+	$charset = mysql_set_charset('utf8');
 }
 public function fechar(){
         //analisar se o mysql_close precisa ser colocado numa variável

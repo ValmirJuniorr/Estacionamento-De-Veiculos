@@ -282,6 +282,12 @@ label.error { float: none; color: red; padding-left: 0.5em; vertical-align: top;
     margin: 50px auto;
 }  
 
+.ativo{
+    background: #0F7;
+}
+.inativo{
+    background: #FFDF00;
+}
 /*==========> Screen para Smartfone Responsive <===========*/
 @media screen and (max-width: 900px) {
 	.menu-top nav {

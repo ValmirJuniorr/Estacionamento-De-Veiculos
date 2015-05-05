@@ -8,7 +8,7 @@
 		<ul>
 			<li><a href="?pg=inicio">Início</a></li>
 			<li><a href="?area=lista_atendentes">Atendentes</a></li>
-			<li><a href="#">Clientes</a></li>
+			<li><a href="?area=lista_clientes">Clientes</a></li>
 			<li><a href="#">Vagas</a></li>
 			<li><a href="#">Relatórios</a></li>
 			<li><a href="control/Usuario/logout.php">Sair</a></li>
@@ -35,7 +35,10 @@
 					break;		
 				case "msg":
 					include("view/admin/msg.php");
-					break;		
+					break;	
+                                case "lista_clientes":
+					include("view/admin/lista_clientes.php");
+					break;
 				default: 
 					echo "Página não encontrada";				
 			}

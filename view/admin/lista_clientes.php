@@ -1,4 +1,4 @@
-<h2 class="titulo">Atendentes</h2>
+<h2 class="titulo">Clientes</h2>
 <a href="?area=cadastro_atendente" class="btn-cadastrar">CADASTRAR NOVO</a>
 <section class="tabela">
 <?php	
@@ -6,10 +6,12 @@
     include_once("control/admin/verificarPermissao.php");	    	
     // Executa a cláusula SQL		
     //Executa a consulta
-     if(isset($_POST['busca'])){
+    if(isset($_POST['busca'])){
         $busca = $_POST['busca'];
     }else{$busca='';}
-    $sql = "SELECT idEmpregado, login, tipo FROM empregado WHERE tipo <> 1 AND login LIKE '%$busca%' ORDER BY login ASC";
+    $sql = "SELECT cliente.idCliente, usuario.nomeUsuario FROM cliente
+  INNER JOIN usuario ON usuario.idUsuario = cliente.idUsuario WHERE usuario.nomeUsuario LIKE '%$busca%'
+  ORDER BY usuario.nomeUsuario ASC";
     $conect = new Banco();
     $conect->abrir();
     $res = mysql_query($sql);
@@ -20,7 +22,7 @@
     <table width=100% cellpading=0 cellspacing=0>
         <tr>
             <th>ID</th>
-            <th>Login</th>
+            <th>Nome</th>            
             <th class="fright">Ações</th>					
         </tr>
     <?php
@@ -30,15 +32,16 @@
             // Zebramos nossa linha da tabela onde pegamos o cont dividimos por 2
             // se o resto for zero mostramos uma cor, se não for mostramos outra
             if ($cont % 2 == 0){
-                $cor = "#f2f2f2";
+                    $cor = "#f2f2f2";
             }
             else{
-                $cor = "#ffffff";
-            }		    
+                    $cor = "#ffffff";
+            }    
+            
             echo "<tr bgcolor='".$cor."'>";
-            echo '<td>'.$row['idEmpregado']."</td>";
-            echo '<td>'.$row['login']."</td>";				
-            echo '<td class="fright"><a href="?area=editar_atendente&idEmpregado='.$row['idEmpregado'].'" class="editar">Editar</a>  <a href="control/admin/exclir_atendente.php?idEmpregado='.$row['idEmpregado'].'" class="excluir">Excluir</a></td>';
+            echo '<td>'.$row['idCliente']."</td>";                         
+            echo '<td>'.$row['nomeUsuario']."</td>";				
+            echo '<td class="fright"><a href="?area=editar_atendente&idEmpregado='.$row['idCliente'].'" class="editar">Editar</a>  <a href="control/admin/exclir_atendente.php?idEmpregado='.$row['idCliente'].'" class="excluir">Excluir</a></td>';
             echo "</tr>";
             $cont = $cont + 1;
       }
