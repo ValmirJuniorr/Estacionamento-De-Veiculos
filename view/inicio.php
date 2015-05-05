@@ -39,6 +39,9 @@
                                 case "lista_clientes":
 					include("view/admin/lista_clientes.php");
 					break;
+                                case "editar_cliente":
+					include("view/admin/editar_cliente.php");
+					break;
 				default: 
 					echo "Página não encontrada";				
 			}

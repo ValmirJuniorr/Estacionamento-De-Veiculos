@@ -41,7 +41,7 @@
             echo "<tr bgcolor='".$cor."'>";
             echo '<td>'.$row['idCliente']."</td>";                         
             echo '<td>'.$row['nomeUsuario']."</td>";				
-            echo '<td class="fright"><a href="?area=editar_atendente&idEmpregado='.$row['idCliente'].'" class="editar">Editar</a>  <a href="control/admin/exclir_atendente.php?idEmpregado='.$row['idCliente'].'" class="excluir">Excluir</a></td>';
+            echo '<td class="fright"><a href="?area=editar_cliente&idCliente='.$row['idCliente'].'" class="editar">Editar</a>  <a href="control/admin/exclir_cliente.php?idCliente='.$row['idCliente'].'" class="excluir">Excluir</a></td>';
             echo "</tr>";
             $cont = $cont + 1;
       }
