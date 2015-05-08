@@ -30,6 +30,7 @@ include_once("control/admin/verificarPermissao.php");
 </form>
     <?php
     if(isset($_POST['nomeUsuario'])){
+        echo '<h1>Entrou</h1>';
         include'control/admin/cadastrarCliente.php';
     }
 ?>

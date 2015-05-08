@@ -5,9 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include_once("../Usuario/conferirLogin.php");	
-include('../connection/connection.class.php');
-include("../../model/Empregado.php");
+include_once("control/Usuario/conferirLogin.php");	
+include_once('control/connection/connection.class.php');
+//include("/model/Empregado.php");
 
 $bd = new Banco();
 $bd->abrir();
@@ -26,7 +26,7 @@ $uf = htmlspecialchars(mysql_real_escape_string(@$_POST['uf']));
 //Conta número de registros da busca anterior
 
 
-    $cadastro1 = mysql_query("INSERT INTO usuario (nomeUsuario, cpf, indentidade, rua, numero, cidade, bairro, uf) VALUES('$nomeUsuario', '$cpf', '$indentidade', '$rua', '$numero', '$numero', '$cidade', '$bairro', '$uf')") or die(mysql_error());
+    $cadastro1 = mysql_query("INSERT INTO usuario (nomeUsuario, cpf, indentidade, rua, numero, cidade, bairro, uf) VALUES('$nomeUsuario', '$cpf', '$indentidade', '$rua', '$numero', '$cidade', '$bairro', '$uf')") or die(mysql_error());
     $id = mysql_insert_id();
     echo  $cadastro1;
     $cadastro2 = mysql_query("INSERT INTO cliente (status, totalGasto, numeroLocacoes, idUsuario) VALUES('1', '0', '0', $id )") or die(mysql_error());

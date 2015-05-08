@@ -70,3 +70,4 @@ class Empregado extends Usuario{
     }
  
 }
+?>

@@ -16,7 +16,7 @@ $cidade = htmlspecialchars(mysql_real_escape_string(@$_POST['cidade']));
 $bairro = htmlspecialchars(mysql_real_escape_string(@$_POST['bairro']));
 $uf = htmlspecialchars(mysql_real_escape_string(@$_POST['uf']));
 
-$atualizar_sql =  mysql_query("UPDATE usuario SET nomeUsuario = '$nomeUsuario', cpf = '$cpf', rua = '$rua', numero = '$numero', cidade = '$cidade', bairro = '$bairro', uf = '$uf' WHERE idUsuario = '$idUsuario'") or die (mysql_error());
+$atualizar_sql =  mysql_query("UPDATE usuario SET nomeUsuario = '$nomeUsuario', cpf = '$cpf', indentidade = '$indentidade', rua = '$rua', numero = '$numero', cidade = '$cidade', bairro = '$bairro', uf = '$uf' WHERE idUsuario = '$idUsuario'") or die (mysql_error());
 if($atualizar_sql){
     header('Location: ../../?area=msg&tipo=3');
 }else{
