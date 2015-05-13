@@ -10,7 +10,8 @@ if(isset($_POST['login']) && isset($_POST['senha'])){
 	$empregado = new Empregado();
 	if($empregado->autentica($_POST['login'], $_POST['senha'])){
 		session_start();
-		$_SESSION['empregado'] = $empregado;				
+		$_SESSION['empregado'] = $empregado;
+                
 		header('Location: ../../index.php');				
 	}else{
 		header('Location: ../../index.php?pg=login');	

@@ -1,5 +1,5 @@
 <h2 class="titulo">Vagas</h2>
-<a href="?area=cadastro_atendente" class="btn-cadastrar">CADASTRAR NOVO</a>
+<a href="?area=cadastro_vaga" class="btn-cadastrar">CADASTRAR NOVO</a>
 <section class="tabela">
 <?php	
     include_once("control/Usuario/conferirLogin.php");	
@@ -9,20 +9,18 @@
     if(isset($_POST['busca'])){
         $busca = $_POST['busca'];
     }else{$busca='';}
-    $sql = "SELECT * FROM vaga WHERE valor LIKE '%$busca%' OR localizacaoHorizontal LIKE '%$busca%' OR localizacaoVertical LIKE '%$busca%'
-  ORDER BY idVaga ASC";
+    $sql = "SELECT * FROM vaga WHERE valor LIKE '%$busca%' OR idVaga LIKE '%$busca%' ORDER BY idVaga ASC";
     $conect = new Banco();
     $conect->abrir();
     $res = mysql_query($sql);
 ?>
     <form method="post" id="busca">
-        <input name="busca" id="busca" class="btn-cadastrar" placeholder="Buscar">
+        <input name="busca" id="busca" class="btn-cadastrar" placeholder="Buscar Nº Vaga">
     </form>
     <table width=100% cellpading=0 cellspacing=0>
         <tr>
             <th>ID</th>
-            <th>Valor</th>            
-            <th>H x V</th>            
+            <th>Valor</th>                        
             <th>Status</th>            
             <th class="fright">Ações</th>					
         </tr>
@@ -41,10 +39,17 @@
             
             echo "<tr bgcolor='".$cor."'>";
             echo '<td>'.$row['idVaga']."</td>";                         
-            echo '<td>R$ '.$row['valor']."</td>";				
-            echo '<td>'.$row['localizacaoHorizontal']." x ".$row['localizacaoVertical']."</td>";				            
-            echo '<td>'.$row['status']."</td>";				
-            echo '<td class="fright"><a href="?area=editar_cliente&idCliente='.$row['idVaga'].'" class="editar">Editar</a>  <a href="control/admin/exclir_cliente.php?idCliente='.$row['idVaga'].'" class="excluir">Excluir</a></td>';
+            echo '<td>R$ '.$row['valor']."</td>";
+            if($row['status']==0){
+                echo '<td>Livre</td>';				
+            }
+            else if($row['status']==1){
+                echo '<td>Oculpada</td>';				
+            }
+            else if($row['status']==2){
+                echo '<td>Reservada</td>';				
+            }
+            echo '<td class="fright"><a href="?area=editar_vaga&idVaga='.$row['idVaga'].'" class="editar">Editar</a>  <a href="control/admin/exclir_vaga.php?idVaga='.$row['idVaga'].'" class="excluir">Excluir</a></td>';
             echo "</tr>";
             $cont = $cont + 1;
       }

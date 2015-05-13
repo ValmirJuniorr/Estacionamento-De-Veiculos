@@ -3,14 +3,14 @@
 ?>
 
 <header class="menu-top">
-	<h1><a href="#">Mananger Park</a></h1>
+	<h1><a href="?pg=inicio">Mananger Park</a></h1>
 	<nav>
 		<ul>
 			<li><a href="?pg=inicio">Início</a></li>
 			<li><a href="?area=lista_atendentes">Atendentes</a></li>
 			<li><a href="?area=lista_clientes">Clientes</a></li>
 			<li><a href="?area=lista_vagas">Vagas</a></li>
-			<li><a href="#">Relatórios</a></li>
+			<li><a href="?area=relatorios">Relatórios</a></li>
 			<li><a href="control/Usuario/logout.php">Sair</a></li>
 		</ul>
 	</nav>
@@ -19,7 +19,7 @@
 <div class="content">
 	<?php
 	if(empty($_GET['area'])){				   
-		include("view/admin/lista_atendentes.php");
+		include("view/admin/relatorios.php");
 	}		
 		else{
 			$area = $_GET['area'];
@@ -47,6 +47,15 @@
 					break;
                                 case "lista_vagas":
 					include("view/admin/lista_vagas.php");
+					break;
+                                case "editar_vaga":
+					include("view/admin/editar_vaga.php");
+					break;
+                                case "cadastro_vaga":
+					include("view/admin/cadastro_vaga.php");
+					break;
+                                case "relatorios":
+					include("view/admin/relatorios.php");
 					break;
 				default: 
 					echo "Página não encontrada";				

@@ -53,12 +53,14 @@ body, html{
 body{
     height:100%;
     position: relative;
-	text-align: center;
-	background: url(../img/background.jpg) no-repeat center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+    text-align: center;
+    background: url(../img/background.jpg) no-repeat center fixed;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
 }
 .menu-top{
 	width: 80%;
@@ -287,6 +289,19 @@ label.error { float: none; color: red; padding-left: 0.5em; vertical-align: top;
 }
 .inativo{
     background: #FFDF00;
+}
+
+.titulo-list{
+    margin: 25px auto;
+    border-bottom: 2px #fff solid;
+    width: 60% !important;
+    font-size: 22px !important;
+}
+.titulo-list > span{
+    float: right;
+    font-size: 28px;
+    color: #FFF;
+    font-style: bold;
 }
 /*==========> Screen para Smartfone Responsive <===========*/
 @media screen and (max-width: 900px) {
