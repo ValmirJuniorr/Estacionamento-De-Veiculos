@@ -12,7 +12,7 @@ class Banco{
 public function __construct(){
         $this->local    =       'localhost';
         $this->user     =       'root';
-        $this->senha    =       '';
+        $this->senha    =       'root';
         $this->msg0     =       'Conexão falou, erro: '.mysql_error();
         $this->msg1     =       'Não foi possível selecionar o banco de dados!';
         $this->nome_db  =       'parkmaneger';

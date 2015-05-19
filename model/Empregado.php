@@ -1,4 +1,4 @@
-<?php
+ <?php
 include 'Usuario.php';
 include_once('control/connection/connection.class.php');
 
