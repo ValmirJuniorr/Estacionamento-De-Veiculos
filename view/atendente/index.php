@@ -5,22 +5,23 @@
 	<meta charset="utf-8">
 	<meta name="description" content="Gerencie o seu estacionamento com iteligencia de maneira rápida.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">	
-	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="shortcut icon" href="../../img/favicon.ico">
 	<!-- Style Css -->
 	<link rel="stylesheet" href="../../style/style.css">
+	<link rel="stylesheet" href="../../style/print/style.css" media="print">
 	<link rel="stylesheet" href="../../style/animate.css">
 </head>
 <body>	
-    <?php include_once('../../control/connection/connection.class.php'); ?>
+    <?php
+    date_default_timezone_set('America/Sao_Paulo');
+    include_once('../../control/connection/connection.class.php'); ?>
     
 <header class="menu-top">
 	<h1><a href="?pg=inicio">Mananger Park</a></h1>
 	<nav>
 		<ul>
-			<li><a href="?pg=inicio">Início</a></li>
-			<li><a href="?area=lista_atendentes">Reserva</a></li>
-			<li><a href="?area=lista_clientes">Controle Chegada</a></li>
-			<li><a href="?area=lista_vagas">Controle Saída</a></li>			
+			<li><a href="?pg=inicio">Início</a></li>		
+			<li><a href="?area=reservar">Reserva</a></li>		
 			<li><a href="control/Usuario/logout.php">Sair</a></li>
 		</ul>
 	</nav>
@@ -36,6 +37,23 @@
 			switch($area){												
 				case "msg":
 					include("../admin/msg.php");
+					break;
+				case "reservar":
+					include("reservar.php");
+					break;
+				case "entrada":
+					include("entrada.php");
+					break;
+				case "saida":
+					include("saida.php");
+					break;
+				default: 
+				case "perfilCliente":
+					include("perfilCliente.php");
+					break;
+				default: 
+				case "novaReserva":
+					include("novaReserva.php");
 					break;
 				default: 
 					echo "Página não encontrada";				

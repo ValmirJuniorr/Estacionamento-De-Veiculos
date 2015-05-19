@@ -1,4 +1,4 @@
-<h2 class="titulo">Vagas</h2>
+<h2 class="titulo">Reserva</h2>
 
 <section class="tabela">
 <?php	    
@@ -8,25 +8,18 @@
     if(isset($_POST['busca'])){
         $busca = $_POST['busca'];
     }else{$busca='';}
-    $sql = "SELECT * FROM vaga WHERE status LIKE '%$busca%' AND status <> '2' ORDER BY idVaga ASC";
+    $sql = "SELECT * FROM reserva ORDER BY idVaga ASC";
     $conect = new Banco();
     $conect->abrir();
     $res = mysql_query($sql);
 ?>
-    <form method="post" id="busca" class="item-list-cliente">
-        <label for="busca">Listar por Status</label>        
-        <select name="busca" id="busca" class="">
-            <option value="">Todos</option>
-            <option value="0">Livre</option>            
-            <option value="1">Ocupado</option>            
-        </select>        
-        <input type="submit" name="ok" id="ok" class="" value="Buscar">
+    <form method="post" id="busca" class="item-list-cliente">                            
+        <input type="submit" name="ok" id="ok" class="" value="Nova Reserva">
     </form>
     <table width=100% cellpading=0 cellspacing=0>
         <tr>
             <th>Nº Vaga</th>
-            <th>Valor</th>                        
-            <th>Status</th>            
+            <th>ID do Cliente</th>                                    
             <th class="fright">Ações</th>					
         </tr>
     <?php
@@ -44,17 +37,15 @@
             
             echo "<tr bgcolor='".$cor."'>";
             echo '<td class="h1-id">'.$row['idVaga']."</td>";                         
-            echo '<td>R$ '.$row['valor']."</td>";
-            if($row['status']==0){
-                echo '<td>Livre</td>';	
-                echo '<td class="fright"><a href="?area=entrada&idVaga='.$row['idVaga'].'" class="entrada" >Entrada</a></td>';
-            }
-            else if($row['status']==1){
-                echo '<td>Ocupada</td>';
-                echo '<td class="fright"><a href="?area=saida&idVaga='.$row['idVaga'].'" class="saida">Saída</a></td>';
-            }
+            echo '<td><a href="?area=perfilCliente&idCliente='.$row['idCliente'].'">'.$row['idCliente']." <small>[mais detalhes]</small></a></td>";            
+            echo '<td class="fright"><a href="../../control/atendente/excluirReserva.php?idReserva='.$row['id'].'&idVaga='.$row['idVaga'].'" class="exreserva" >Excluir Reserva</a></td>';
+            
             echo "</tr>";
             $cont = $cont + 1;
+      }
+      
+      if(isset($_POST['ok'])){
+          header('Location: ?area=novaReserva');
       }
     ?>
     </table>	
