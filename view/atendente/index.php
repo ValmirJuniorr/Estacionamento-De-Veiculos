@@ -12,13 +12,16 @@
 	<link rel="stylesheet" href="../../style/animate.css">
 </head>
 <body>	
-    <?php include_once('../../control/connection/connection.class.php'); ?>
+    <?php
+    date_default_timezone_set('America/Sao_Paulo');
+    include_once('../../control/connection/connection.class.php'); ?>
     
 <header class="menu-top">
 	<h1><a href="?pg=inicio">Mananger Park</a></h1>
 	<nav>
 		<ul>
 			<li><a href="?pg=inicio">Início</a></li>		
+			<li><a href="?area=reservar">Reserva</a></li>		
 			<li><a href="control/Usuario/logout.php">Sair</a></li>
 		</ul>
 	</nav>
@@ -43,6 +46,14 @@
 					break;
 				case "saida":
 					include("saida.php");
+					break;
+				default: 
+				case "perfilCliente":
+					include("perfilCliente.php");
+					break;
+				default: 
+				case "novaReserva":
+					include("novaReserva.php");
 					break;
 				default: 
 					echo "Página não encontrada";				

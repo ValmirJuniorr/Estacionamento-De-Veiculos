@@ -332,7 +332,9 @@ label.error { float: none; color: red; padding-left: 0.5em; vertical-align: top;
     border: 2px solid #fff;
     transition: all 2s linear;    
 }
-
+.titulo > small{
+      font-size: 20px;
+}
 .exreserva{
     background: #f85032; /* Old browsers */
     background: -moz-linear-gradient(top, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* FF3.6+ */

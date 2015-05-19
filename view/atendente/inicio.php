@@ -8,7 +8,7 @@
     if(isset($_POST['busca'])){
         $busca = $_POST['busca'];
     }else{$busca='';}
-    $sql = "SELECT * FROM vaga WHERE status LIKE '%$busca%' ORDER BY idVaga ASC";
+    $sql = "SELECT * FROM vaga WHERE status LIKE '%$busca%' AND status <> '2' ORDER BY idVaga ASC";
     $conect = new Banco();
     $conect->abrir();
     $res = mysql_query($sql);
@@ -18,8 +18,7 @@
         <select name="busca" id="busca" class="">
             <option value="">Todos</option>
             <option value="0">Livre</option>            
-            <option value="1">Ocupado</option>
-            <option value="2">Reservado</option>
+            <option value="1">Ocupado</option>            
         </select>        
         <input type="submit" name="ok" id="ok" class="" value="Buscar">
     </form>
@@ -48,15 +47,11 @@
             echo '<td>R$ '.$row['valor']."</td>";
             if($row['status']==0){
                 echo '<td>Livre</td>';	
-                echo '<td class="fright"><a href="?area=reservar&idVaga='.$row['idVaga'].'" class="reservar" >Reservar</a> <a href="?area=entrada&idVaga='.$row['idVaga'].'" class="entrada" >Entrada</a></td>';
+                echo '<td class="fright"><a href="?area=entrada&idVaga='.$row['idVaga'].'" class="entrada" >Entrada</a></td>';
             }
             else if($row['status']==1){
                 echo '<td>Ocupada</td>';
-                echo '<td class="fright"><a href="?area=reservar&idVaga='.$row['idVaga'].'" class="reservar" >Reservar</a> <a href="?area=saida&idVaga='.$row['idVaga'].'" class="saida">Saída</a></td>';
-            }
-            else if($row['status']==2){
-                echo '<td>Reservada</td>';
-                echo '<td class="fright"><a href="?area=reservar&idVaga='.$row['idVaga'].'" class="reservar" >Reservar</a> <a href="?area=editar_vaga&idVaga='.$row['idVaga'].'" class="exreserva">Excluir Reserva</a></td>';
+                echo '<td class="fright"><a href="?area=saida&idVaga='.$row['idVaga'].'" class="saida">Saída</a></td>';
             }
             echo "</tr>";
             $cont = $cont + 1;

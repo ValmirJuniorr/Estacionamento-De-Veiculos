@@ -5,6 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+date_default_timezone_set('America/Sao_Paulo');
 session_start();
 include('../connection/connection.class.php');
 
