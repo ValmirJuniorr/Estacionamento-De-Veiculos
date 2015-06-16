@@ -20,6 +20,7 @@ class Usuario {
     private $numero;
     private $cidade;
     private $uf;
+    
     function getId() {
         return $this->id;
     }

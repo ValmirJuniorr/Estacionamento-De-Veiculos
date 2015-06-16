@@ -63,5 +63,11 @@ class Cliente extends Usuario{
             return false;
         }
     }
+    function debitaSaldo($debito){
+        $this->saldo-=$debito;
+    }
     
+    function creditaSaldo($saldo){
+        $this->saldo+=$saldo;
+    }    
 }
