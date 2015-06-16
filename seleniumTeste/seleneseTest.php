@@ -17,7 +17,7 @@ require_once 'PHPUnit/Extensions/SeleniumTestCase.php';
 class seleneseTest extends PHPUnit_Extensions_SeleniumTestCase {
 
     function setUp() {
-        $this->setBrowser("*chrome");
+        $this->setBrowser("*firefox");
         $this->setBrowserUrl("http://localhost/ParkingManagerment");
     }
 
