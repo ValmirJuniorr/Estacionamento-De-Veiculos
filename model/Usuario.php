@@ -6,13 +6,14 @@
  */
 
 /**
- * Description of Usuario
+ * Description of Usuario.
  *
  * @author jerffeson
  */
-class Usuario {
+class Usuario
+{
     //put your code here
-    
+
     private $idUsuario;
     private $nomeUsuario;
     private $cpf;
@@ -21,52 +22,69 @@ class Usuario {
     private $cidade;
     private $uf;
     private $numero;
-    
-    public function getId(){
+
+    public function getId()
+    {
         return $this->idUsuario;
     }
-    public function getNome(){
+
+    public function getNome()
+    {
         return $this->nomeUsuario;
     }
-    public function getCpf(){
+
+    public function getCpf()
+    {
         return $this->cpf;
     }
-    public function getIdentidade(){
+
+    public function getIdentidade()
+    {
         return $this->identidade;
     }
-    public function getRua(){
+
+    public function getRua()
+    {
         return $this->rua;
     }
 
-    public function getCidade() {
+    public function getCidade()
+    {
         return $this->cidade;
     }
 
-    public function getUf() {
+    public function getUf()
+    {
         return $this->uf;
     }
 
-    public function getNumero() {
+    public function getNumero()
+    {
         return $this->numero;
     }
 
-    public function setIdUsuario($idUsuario) {
+    public function setIdUsuario($idUsuario)
+    {
         $this->idUsuario = $idUsuario;
     }
 
-    public function setNomeUsuario($nomeUsuario) {
+    public function setNomeUsuario($nomeUsuario)
+    {
         $this->nomeUsuario = $nomeUsuario;
     }
 
-    public function setCidade($cidade) {
+    public function setCidade($cidade)
+    {
         $this->cidade = $cidade;
     }
 
-    public function setUf($uf) {
+    public function setUf($uf)
+    {
         $this->uf = $uf;
     }
 
-    public function setNumero($numero) {
+    public function setNumero($numero)
+    {
         $this->numero = $numero;
-    }    
+    }
 }

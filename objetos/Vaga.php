@@ -7,57 +7,65 @@
  */
 
 /**
- * Description of Vaga
+ * Description of Vaga.
  *
  * @author Valmir
  */
-class Vaga {
+class Vaga
+{
     private $idvaga;
     private $localHorizont;
     private $localVericar;
     private $valorVaga;
     private $locado;
-    
-    function getLocacao() {
+
+    public function getLocacao()
+    {
         return $this->locado;
     }
 
-    function setLocacao($locacao) {
+    public function setLocacao($locacao)
+    {
         $this->locado = $locacao;
     }
 
-        function getIdvaga() {
+    public function getIdvaga()
+    {
         return $this->idvaga;
     }
 
-    function getLocalHorizont() {
+    public function getLocalHorizont()
+    {
         return $this->localHorizont;
     }
 
-    function getLocalVericar() {
+    public function getLocalVericar()
+    {
         return $this->localVericar;
     }
 
-    function getValorVaga() {
+    public function getValorVaga()
+    {
         return $this->valorVaga;
     }
 
-    function setIdvaga($idvaga) {
+    public function setIdvaga($idvaga)
+    {
         $this->idvaga = $idvaga;
     }
 
-    function setLocalHorizont($localHorizont) {
+    public function setLocalHorizont($localHorizont)
+    {
         $this->localHorizont = $localHorizont;
     }
 
-    function setLocalVericar($localVericar) {
+    public function setLocalVericar($localVericar)
+    {
         $this->localVericar = $localVericar;
     }
 
-    function setValorVaga($valorVaga) {
+    public function setValorVaga($valorVaga)
+    {
         $this->valorVaga = $valorVaga;
     }
-
-
-    
 }

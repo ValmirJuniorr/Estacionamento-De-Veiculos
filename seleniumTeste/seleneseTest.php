@@ -6,29 +6,31 @@
  * and open the template in the editor.
  */
 
-
 require_once 'PHPUnit/Extensions/SeleniumTestCase.php';
 
 /**
- * Description of seleneseTest
+ * Description of seleneseTest.
  *
  * @author Valmir
  */
-class seleneseTest extends PHPUnit_Extensions_SeleniumTestCase {
-
-    function setUp() {
-        $this->setBrowser("*firefox");
-        $this->setBrowserUrl("http://localhost/ParkingManagerment");
+class seleneseTest extends PHPUnit_Extensions_SeleniumTestCase
+{
+    public function setUp()
+    {
+        $this->setBrowser('*firefox');
+        $this->setBrowserUrl('http://localhost/ParkingManagerment');
     }
 
-    function testMyTestCase() {
-        $this->open("http://localhost/ParkingManagerment/index.php");
+    public function testMyTestCase()
+    {
+        $this->open('http://localhost/ParkingManagerment/index.php');
         $this->waitForPageToLoad();
         $this->assertEquals('Mananger Park Val', $this->getTitle());
     }
-    
+
     //login do Administrador
-    public function testLogin() {
+    public function testLogin()
+    {
         $this->open('http://localhost/ParkingManagerment/index.php');
 
         $user = 'admin';
@@ -39,9 +41,10 @@ class seleneseTest extends PHPUnit_Extensions_SeleniumTestCase {
         $this->waitForPageToLoad();
         $this->assertContains(($this->getText('css=h1.titulo')), 'Relatórios');
     }
-    
+
     //login do Empregado
-    public function testLoginEmpregado() {
+    public function testLoginEmpregado()
+    {
         $this->open('http://localhost/ParkingManagerment/index.php');
 
         $user = 'Valmir';
@@ -52,14 +55,13 @@ class seleneseTest extends PHPUnit_Extensions_SeleniumTestCase {
         $this->waitForPageToLoad();
         $this->assertContains(($this->getText('css=h2.titulo')), 'Vagas');
     }
-    
 
     /* public function testSubmitToSelf()
       {
       // set the url
       $this->url( 'contact' );
 
-  
+
      *     // create a form object for reuse
       $form = $this->byId( 'contact_form' );
 
@@ -77,5 +79,3 @@ class seleneseTest extends PHPUnit_Extensions_SeleniumTestCase {
       $form->submit();
       } */
 }
-
-?>

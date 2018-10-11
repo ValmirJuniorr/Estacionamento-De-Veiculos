@@ -7,11 +7,12 @@
  */
 
 /**
- * Description of Usuario
+ * Description of Usuario.
  *
  * @author tecnica_uab
  */
-class Usuario {
+class Usuario
+{
     private $id;
     private $nome;
     private $cpf;
@@ -20,68 +21,84 @@ class Usuario {
     private $numero;
     private $cidade;
     private $uf;
-    
-    function getId() {
+
+    public function getId()
+    {
         return $this->id;
     }
 
-    function getNome() {
+    public function getNome()
+    {
         return $this->nome;
     }
 
-    function getCpf() {
+    public function getCpf()
+    {
         return $this->cpf;
     }
 
-    function getIndentidade() {
+    public function getIndentidade()
+    {
         return $this->indentidade;
     }
 
-    function getRua() {
+    public function getRua()
+    {
         return $this->rua;
     }
 
-    function getNumero() {
+    public function getNumero()
+    {
         return $this->numero;
     }
 
-    function getCidade() {
+    public function getCidade()
+    {
         return $this->cidade;
     }
 
-    function getUf() {
+    public function getUf()
+    {
         return $this->uf;
     }
 
-    function setId($id) {
+    public function setId($id)
+    {
         $this->id = $id;
     }
 
-    function setNome($nome) {
+    public function setNome($nome)
+    {
         $this->nome = $nome;
     }
 
-    function setCpf($cpf) {
+    public function setCpf($cpf)
+    {
         $this->cpf = $cpf;
     }
 
-    function setIndentidade($indentidade) {
+    public function setIndentidade($indentidade)
+    {
         $this->indentidade = $indentidade;
     }
 
-    function setRua($rua) {
+    public function setRua($rua)
+    {
         $this->rua = $rua;
     }
 
-    function setNumero($numero) {
+    public function setNumero($numero)
+    {
         $this->numero = $numero;
     }
 
-    function setCidade($cidade) {
+    public function setCidade($cidade)
+    {
         $this->cidade = $cidade;
     }
 
-    function setUf($uf) {
+    public function setUf($uf)
+    {
         $this->uf = $uf;
     }
 }

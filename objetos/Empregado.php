@@ -7,39 +7,45 @@
  */
 
 /**
- * Description of Empregado
+ * Description of Empregado.
  *
  * @author tecnica_uab
  */
-class Empregado extends Usuario {
+class Empregado extends Usuario
+{
     private $senha;
     private $tipo;
-    
-    function getSenha() {
+
+    public function getSenha()
+    {
         return $this->senha;
     }
 
-    function getTipo() {
+    public function getTipo()
+    {
         return $this->tipo;
     }
 
-    function setSenha($senha) {
+    public function setSenha($senha)
+    {
         $this->senha = $senha;
     }
 
-    function setTipo($tipo) {
+    public function setTipo($tipo)
+    {
         $this->tipo = $tipo;
     }
-    
-    function autentica($senha){
-        if($this->senha==$senha)
+
+    public function autentica($senha)
+    {
+        if ($this->senha == $senha) {
             return true;
+        }
+
         return false;
     }
-    function locarVaga($cliente,$vaga){
-        
+
+    public function locarVaga($cliente, $vaga)
+    {
     }
-
-
-    
 }

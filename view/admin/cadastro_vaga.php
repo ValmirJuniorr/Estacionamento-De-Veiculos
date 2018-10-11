@@ -1,7 +1,7 @@
 <script language="javascript" type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <script src="js/validate/dist/jquery.validate.min.js"></script>
 <script language="javascript" type="text/javascript" src="js/validacao.js"></script>
-<?php include_once("control/admin/verificarPermissao.php");	?>
+<?php include_once 'control/admin/verificarPermissao.php'; ?>
 <form method="post" <?php //action="control/admin/cadastrarEmpregado.php"?> class="form-login animated fadeInRight" id="formCadastro">
     <fieldset>		
             <label for="valor">valor</label>
@@ -11,7 +11,7 @@
 </form>
 
 <?php
-    if(isset($_POST['valor'])){
-        include'control/admin/cadastrarVaga.php';
+    if (isset($_POST['valor'])) {
+        include 'control/admin/cadastrarVaga.php';
     }
 ?>

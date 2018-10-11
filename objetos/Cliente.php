@@ -9,65 +9,77 @@ use Usuario;
  */
 
 /**
- * Description of Cliente
+ * Description of Cliente.
  *
  * @author tecnica_uab
  */
-class Cliente extends Usuario{
+class Cliente extends Usuario
+{
     private $status;
-    private $numeroVisitas=0;
-    private $totalGasto=0;
-    private $saldo=0.0;
-    
-    function getStatus() {
+    private $numeroVisitas = 0;
+    private $totalGasto = 0;
+    private $saldo = 0.0;
+
+    public function getStatus()
+    {
         return $this->status;
     }
 
-    function getNumeroVisitas() {
+    public function getNumeroVisitas()
+    {
         return $this->numeroVisitas;
     }
 
-    function getTotalGasto() {
+    public function getTotalGasto()
+    {
         return $this->totalGasto;
     }
 
-    function getSaldo() {
+    public function getSaldo()
+    {
         return $this->saldo;
     }
 
-    function setStatus($status) {
+    public function setStatus($status)
+    {
         $this->status = $status;
     }
 
-    function setNumeroVisitas($numeroVisitas) {
+    public function setNumeroVisitas($numeroVisitas)
+    {
         $this->numeroVisitas = $numeroVisitas;
     }
 
-    function setTotalGasto($totalGasto) {
+    public function setTotalGasto($totalGasto)
+    {
         $this->totalGasto = $totalGasto;
     }
 
-    function setSaldo($saldo) {
+    public function setSaldo($saldo)
+    {
         $this->saldo = $saldo;
     }
 
-        
-    function efetuaPagamento($divida){
-        $this->numeroVisitas++;        
-        $this->totalGasto+=$divida;
-        if($this->saldo>$divida){
-            $this->saldo-=$divida;
+    public function efetuaPagamento($divida)
+    {
+        $this->numeroVisitas++;
+        $this->totalGasto += $divida;
+        if ($this->saldo > $divida) {
+            $this->saldo -= $divida;
+
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
-    function debitaSaldo($debito){
-        $this->saldo-=$debito;
+
+    public function debitaSaldo($debito)
+    {
+        $this->saldo -= $debito;
     }
-    
-    function creditaSaldo($saldo){
-        $this->saldo+=$saldo;
-    }    
+
+    public function creditaSaldo($saldo)
+    {
+        $this->saldo += $saldo;
+    }
 }

@@ -1,12 +1,12 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-switch (@$_GET['tipo']){
+switch (@$_GET['tipo']) {
     case 1:
         echo '<p class="msg_erro"><b>#ERRO 1#</b> Não foi possivel realizar o cadastro.</p>';
         break;
@@ -30,5 +30,3 @@ switch (@$_GET['tipo']){
 }
 
 echo '<a href="index.php" class="entrar">Voltar</a>';
-
-?>
