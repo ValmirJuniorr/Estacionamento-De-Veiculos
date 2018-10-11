@@ -3,7 +3,7 @@
 <script language="javascript" type="text/javascript" src="js/validacao.js"></script>
 
 <?php
-include_once("control/admin/verificarPermissao.php");	
+include_once 'control/admin/verificarPermissao.php';
 ?>
 <h2 class="titulo">Cadastro</h2>
 <form class="form-login animated fadeInRight" id="formCadastro"  method="post">
@@ -29,8 +29,8 @@ include_once("control/admin/verificarPermissao.php");
     </fieldset>
 </form>
     <?php
-    if(isset($_POST['nomeUsuario'])){
+    if (isset($_POST['nomeUsuario'])) {
         echo '<h1>Entrou</h1>';
-        include'control/admin/cadastrarCliente.php';
+        include 'control/admin/cadastrarCliente.php';
     }
 ?>

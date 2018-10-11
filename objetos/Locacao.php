@@ -7,57 +7,67 @@
  */
 
 /**
- * Description of Locacao
+ * Description of Locacao.
  *
  * @author Valmir
  */
-class Locacao {
+class Locacao
+{
     private $idLocacao;
     private $horaEntrada;
     private $horaSaida;
     private $vaga;
     private $cliente;
-    function getIdLocacao() {
+
+    public function getIdLocacao()
+    {
         return $this->idLocacao;
     }
 
-    function getHoraEntrada() {
+    public function getHoraEntrada()
+    {
         return $this->horaEntrada;
     }
 
-    function getHoraSaida() {
+    public function getHoraSaida()
+    {
         return $this->horaSaida;
     }
 
-    function getVaga() {
+    public function getVaga()
+    {
         return $this->vaga;
     }
 
-    function getCliente() {
+    public function getCliente()
+    {
         return $this->cliente;
     }
 
-    function setIdLocacao($idLocacao) {
+    public function setIdLocacao($idLocacao)
+    {
         $this->idLocacao = $idLocacao;
     }
 
-    function setHoraEntrada($horaEntrada) {
+    public function setHoraEntrada($horaEntrada)
+    {
         $this->horaEntrada = $horaEntrada;
     }
 
-    function setHoraSaida($horaSaida) {
+    public function setHoraSaida($horaSaida)
+    {
         $this->horaSaida = $horaSaida;
     }
+
     //Recebe Um objeto vaga
-    function setVaga($vaga) {
-        $vaga->locado=true;
+    public function setVaga($vaga)
+    {
+        $vaga->locado = true;
         $this->vaga = $vaga;
     }
 
-    function setCliente($cliente) {        
+    public function setCliente($cliente)
+    {
         $this->cliente = $cliente;
     }
-
-
-    
 }

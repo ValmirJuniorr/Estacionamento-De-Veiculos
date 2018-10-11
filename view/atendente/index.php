@@ -14,7 +14,7 @@
 <body>	
     <?php
     date_default_timezone_set('America/Sao_Paulo');
-    include_once('../../control/connection/connection.class.php'); ?>
+    include_once '../../control/connection/connection.class.php'; ?>
     
 <header class="menu-top">
 	<h1><a href="?pg=inicio">Mananger Park</a></h1>
@@ -29,37 +29,36 @@
 
 <div class="content">
 	<?php
-	if(empty($_GET['area'])){				   
-		include("inicio.php");
-	}		
-		else{
-			$area = $_GET['area'];
-			switch($area){												
-				case "msg":
-					include("../admin/msg.php");
-					break;
-				case "reservar":
-					include("reservar.php");
-					break;
-				case "entrada":
-					include("entrada.php");
-					break;
-				case "saida":
-					include("saida.php");
-					break;
-				default: 
-				case "perfilCliente":
-					include("perfilCliente.php");
-					break;
-				default: 
-				case "novaReserva":
-					include("novaReserva.php");
-					break;
-				default: 
-					echo "Página não encontrada";				
-			}
-	}
-	?>
+    if (empty($_GET['area'])) {
+        include 'inicio.php';
+    } else {
+            $area = $_GET['area'];
+            switch ($area) {
+                case 'msg':
+                    include '../admin/msg.php';
+                    break;
+                case 'reservar':
+                    include 'reservar.php';
+                    break;
+                case 'entrada':
+                    include 'entrada.php';
+                    break;
+                case 'saida':
+                    include 'saida.php';
+                    break;
+                default:
+                case 'perfilCliente':
+                    include 'perfilCliente.php';
+                    break;
+                default:
+                case 'novaReserva':
+                    include 'novaReserva.php';
+                    break;
+                default:
+                    echo 'Página não encontrada';
+            }
+        }
+    ?>
 </div>
 
 
@@ -67,6 +66,8 @@
 
 </section>
 	
-    <footer <?php if(@$_GET['pg']=='login') echo 'class="footer-login"';?>><p>&copy; Todos os Direitos Reservados | Equipe Avançada de Desenvolvimento 4º Semestre FAP</p></footer>
+    <footer <?php if (@$_GET['pg'] == 'login') {
+        echo 'class="footer-login"';
+    } ?>><p>&copy; Todos os Direitos Reservados | Equipe Avançada de Desenvolvimento 4º Semestre FAP</p></footer>
 </body>
 </html>
